@@ -286,9 +286,9 @@ class CountVectorsFeaturizer(Featurizer):
              **kwargs: Any
              ) -> 'CountVectorsFeaturizer':
 
-        #was file instead of featurizer_file
-        if model_dir and meta.get("featurizer_file"):
-            file_name = meta.get("featurizer_file")
+       
+        if model_dir and meta.get("file"):
+            file_name = meta.get("file")
             featurizer_file = os.path.join(model_dir, file_name)
             return utils.pycloud_unpickle(featurizer_file)
         else:

@@ -669,9 +669,9 @@ class EmbeddingIntentClassifier(Component):
              cached_component: Optional['EmbeddingIntentClassifier'] = None,
              **kwargs: Any
              ) -> 'EmbeddingIntentClassifier':
-        #was file instead of classifier_file
-        if model_dir and meta.get("classifier_file"):
-            file_name = meta.get("classifier_file").replace(".ckpt","")
+
+        if model_dir and meta.get("file"):
+            file_name = meta.get("file").replace(".ckpt","")
             checkpoint = os.path.join(model_dir, file_name + ".ckpt")
 
             graph = tf.Graph()

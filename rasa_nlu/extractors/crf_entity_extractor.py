@@ -350,8 +350,7 @@ class CRFEntityExtractor(EntityExtractor):
              ) -> 'CRFEntityExtractor':
         from sklearn.externals import joblib
 
-        # file_name = meta.get("file")
-        file_name = meta.get("classifier_file")
+        file_name = meta.get("file")        
         model_file = os.path.join(model_dir, file_name)
 
         if os.path.exists(model_file):
